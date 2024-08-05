@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace testproject
@@ -39,7 +40,15 @@ namespace testproject
             int num1 = 0;
             int.TryParse(value1, out num1);
             Console.WriteLine(num1);
-
+            //here is something awesome
+            string name = "Natarajan software developer!";
+            Console.Write("Do you know who he was? ");
+            Thread.Sleep(2000);
+            for (int i = 0; i < name.Length; i++) {
+                Console.Write(name[i]);
+                Thread.Sleep(200);
+            }
+            Console.WriteLine();
 
         }
     }

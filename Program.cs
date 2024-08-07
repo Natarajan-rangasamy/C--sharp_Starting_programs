@@ -143,11 +143,14 @@ namespace testproject
             catch (Exception e) {
                 Console.WriteLine($"Enter the specified Inputs only \n and The Error is {e.Message}");
             }*/
+            for (int i = 0; i < newarr.Length; i++) {
+                Console.WriteLine(newarr[i] + i);
+            }
 
         }
         private static void printNumbers(int v)
         {
-            Console.WriteLine("Printing...........");
+            Console.WriteLine("Printing........... something");
             float.TryParse("58.9", out float value);
             Console.WriteLine(value);
         }

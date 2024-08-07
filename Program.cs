@@ -133,25 +133,8 @@ namespace testproject
 
             //out
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             //Try Catch Exception
-            Console.WriteLine("Enter some numbers");
+            /*Console.WriteLine("Enter some numbers");
             try
             {
                 int num = Convert.ToInt32(Console.ReadLine());
@@ -159,7 +142,7 @@ namespace testproject
             }
             catch (Exception e) {
                 Console.WriteLine($"Enter the specified Inputs only \n and The Error is {e.Message}");
-            }
+            }*/
 
         }
         private static void printNumbers(int v)

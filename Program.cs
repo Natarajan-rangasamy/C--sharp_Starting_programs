@@ -130,8 +130,21 @@ namespace testproject
              Console.WriteLine(chk);
              Console.WriteLine(name);*/
             //out and ref so important topics pending look at this 
+            // The major differance 3 differance between out and ref functions are 
+            //1 -> ref is bi directional but out is unidirectional
+            //for example
+            /*int num=7;
+             Console.WriteLine(num);
+             outexample(out num);
+             Console.WriteLine(num);*/
 
-            //out
+            // here in the out parameter we need not to initialize
+            //but in the funtion we are processing the out variable there it should be assigned some value
+            // but in ref parameter we have to initialize the variable both before and after passing
+            //for the example 
+            string myname = "Harish";
+            refExample(ref myname);
+            Console.WriteLine(myname);
 
             //Try Catch Exception
             /*Console.WriteLine("Enter some numbers");
@@ -143,11 +156,22 @@ namespace testproject
             catch (Exception e) {
                 Console.WriteLine($"Enter the specified Inputs only \n and The Error is {e.Message}");
             }*/
-            for (int i = 0; i < newarr.Length; i++) {
-                Console.WriteLine(newarr[i] + i);
-            }
+            
 
         }
+
+        private static void refExample(ref string myname)
+        {
+            Console.WriteLine(myname);
+            myname = "Changed -> Natarajan Rangasamy";
+        }
+
+        private static void outexample(out int num)
+        {
+          //  Console.WriteLine(num);//read the error i.e the variable is unassigned 
+            num = 21;
+        }
+
         private static void printNumbers(int v)
         {
             Console.WriteLine("Printing........... something");

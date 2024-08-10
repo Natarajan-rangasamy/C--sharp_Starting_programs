@@ -14,7 +14,7 @@ namespace testproject
     {
         static void Main(string[] args)
         {
-          //  Console.Title = "Concepts of C#";
+            //  Console.Title = "Concepts of C#";
             /*  Console.Write("Enter the number you wanna check: ");
               int a = Convert.ToInt32(Console.ReadLine());
               if (a % 2 == 0)
@@ -109,8 +109,8 @@ namespace testproject
             //so important one I think
             //functions
             //Printing numbers
-           // printNumbers(5);
-            Outside obj = new Outside();
+            // printNumbers(5);
+            // Outside obj = new Outside();
             //to acces the method in outer class directly it should be static 
             //or else if it not we create an instance like this 
             //  obj.accessing(10);
@@ -142,9 +142,10 @@ namespace testproject
             //but in the funtion we are processing the out variable there it should be assigned some value
             // but in ref parameter we have to initialize the variable both before and after passing
             //for the example 
-            string myname = "Harish";
-            refExample(ref myname);
-            Console.WriteLine(myname);
+            /* string myname = "Harish";
+             refExample(ref myname);
+             Console.WriteLine(myname);*/
+            //These were the differance between out and ref and use case scenarios were discussed above
 
             //Try Catch Exception
             /*Console.WriteLine("Enter some numbers");
@@ -156,7 +157,10 @@ namespace testproject
             catch (Exception e) {
                 Console.WriteLine($"Enter the specified Inputs only \n and The Error is {e.Message}");
             }*/
-            
+            Example ex = new Example();
+            ex.Vari2 = 1;
+            Console.WriteLine(ex.Vari2);
+            Console.WriteLine(ex.getVari1());
 
         }
 
@@ -168,7 +172,7 @@ namespace testproject
 
         private static void outexample(out int num)
         {
-          //  Console.WriteLine(num);//read the error i.e the variable is unassigned 
+            //  Console.WriteLine(num);//read the error i.e the variable is unassigned 
             num = 21;
         }
 
@@ -179,12 +183,27 @@ namespace testproject
             Console.WriteLine(value);
         }
     }
-    class Outside
+    //class example for set and get methods in c#
+    class Example
     {
-        public  void accessing(int i)
+        private int vari1;
+        private int vari2;
+        private string vari3;
+
+        public Example()
         {
-            
-            Console.WriteLine("You are accessing from outside the class");
+
+        }
+        public void setvari1(int vari1) => this.vari1 = vari1;
+        public int getVari1() => vari1;
+        public int Vari2 { get; set; }
+        class Outside
+        {
+            public void accessing(int i)
+            {
+
+                Console.WriteLine("You are accessing from outside the class");
+            }
         }
     }
 }
